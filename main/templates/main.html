@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+{% block title%}resursvtor{%endblock%}
+{% block content %}
+  {% include "navbar.html" %}
+  <div class="container-fluid p-0">
+    <!-- Обо мне-->
+    <section class="resume-section" id="about">
+      <div class="resume-section-content">
+        <h1 class="mb-0">
+            <img src="{{ url_for("static", filename="assets/img/logo_only.jpg")}}"></img>Resurs<span class="text-black-50">Vtor</span>
+        </h1>
+        <div class="subheading mb-5 font-second">
+          <a href="mailto:resurs@resursvtor.ru">resurs@resursvtor.ru</a>
+        </div>
+        <div class="card mb-5 bg-light p-4 d-block justify-content-center align-content-center">
+          <p class="lead mb-5">Работаем в сфере защиты окружающей среды, закупаем на переработку вторичные ресурсы (макулатура,
+            пластик, пленка, лом деревянных паллет). Готовы предложить выгодные условия сотрудничества, любые формы оплаты.
+            Хотите с нами работать? С нами можно связать по телефону, через whatsapp, telegram, а также через форму обратной связи.
+            Будем рады вашему обращению в нашу компанию.
+          </p>
+        </div>
+        <div class="social-icons">
+          <a href="https://wa.me/**********" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+          <a class="social-icon" href="https://t.me/**********"><i class="fab fa-telegram"></i></a>
+        </div>
+      </div>
+    </section>
+  <hr class="m-0" />
+  <!-- Сотрудничество-->
+  <section class="resume-section" id="cooperation">
+    <div class="resume-section-content">
+      <h2 class="mb-5">Сотрудничество</h2>
+        <div class="row mb-5">
+          <div class="col-md-6 d-flex flex-row justify-content-center align-items-center">
+            <p class="lead">
+                Если у Вас есть вторсырье для продажи или утилизации, свяжитесь с нами предложим самые
+                выгодные условия сотрудничества. Работаем по Москве и Московской области. Есть свой автопарк.
+                Для получения быстрого ответа и лучшего предложения, присылайте сразу фотографии сырья, а также 
+                уточняте количество и ваше местонахождение. 
+            </p>
+          </div>
+          <div class="col-md-6">
+              <img width="100%" src="{{url_for("static", filename="assets/img/2022-02-04 12-17-13.JPG")}}"
+                  class="shadow border-3 mb-5 bg-body-tertiary rounded" />
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+<hr class="m-0" />
+<!-- Хобби -->
+<section class="resume-section" id="hobby">
+  <div class="resume-section-content">
+    <h2 class="mb-5">Направления</h2>
+    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+      <div class="flex-grow-1">
+        <h3 class="mb-0 text-primary">Вторсырье</h3>
+        <div id="recyclingCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                    <img src="{{url_for("static", filename="assets/img/karton.jpg")}}" class="d-block w-100" alt="Картон">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{url_for("static", filename="assets/img/peld04.jpg")}}" class="d-block w-100" alt="ПВД">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{url_for("static", filename="assets/img/peld1.jpg")}}" class="d-block w-100" alt="Стрейч">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{url_for("static", filename="assets/img/pehd02.jpg")}}" class="d-block w-100" alt="ПНД">
+                </div>
+            </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#recyclingCarousel" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Предыдущее</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#recyclingCarousel" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Следующее</span>
+                  </button>
+              </div>
+              <p class="lead">
+                  Огромное количество партнеров по переработке вторсырья, прямые выходы на крупные производства.
+                  Готовы к переработке любого объема.
+              </p>
+              <h3 class="mb-0 text-primary">Паллеты</h3>
+              <div id="palletsCarousel" class="carousel slide" data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                      <div class="carousel-item active">
+                          <img src="{{url_for("static", filename="assets/img/middle1.jpg")}}" class="d-block w-100" alt="Паллеты">
+                      </div>
+                      <div class="carousel-item">
+                          <img src="{{url_for("static", filename="assets/img/large1.jpg")}}" class="d-block w-100" alt="Большие Паллеты">
+                      </div>
+                      <div class="carousel-item">
+                          <img src="{{ url_for("static", filename="assets/img/euro1.jpg") }}"class="d-block w-100" alt="Евро Паллеты">
+                      </div>
+                      <div class="carousel-item">
+                          <img src="{{url_for("static", filename="assets/img/light.jpg")}}" class="d-block w-100" alt="Облегченные Паллеты">
+                      </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#palletsCarousel" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Предыдущее</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#palletsCarousel" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Следующее</span>
+                  </button>
+              </div>
+              <p class="lead">
+                Продаем высококачественные б/у паллеты. Стандартные размеры, грузоподъемностью до 2,5 тонн.
+              </p>
+          </div>
+      </div>
+</section>
+<hr class="m-0" />
+<!--Достижения-->
+<section class="resume-section" id="skills">
+  <div class="resume-section-content">
+      <h2 class="mb-5">Достижения</h2>
+      <table class="table">
+          <thead class="text-center text-primary">
+            <tr>
+              <th scope="col">Дата</th>
+              <th scope="col">Достижение</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="text-center">
+              <td>01-12-2023</td>
+              <td>Получение гранта от правительства Московской области</td>
+            </tr>
+            <tr class="text-center">
+              <td>27-12-2023</td>
+              <td>Приобретение нового оборудования для прессования картона</td>
+            </tr>
+          </tbody>
+      </table>
+</section>
+<hr class="m-0" />
+{% include "contact.html" %}
+{%endblock%}
