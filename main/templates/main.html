@@ -20,8 +20,9 @@
           </p>
         </div>
         <div class="social-icons">
-          <a href="https://wa.me/**********" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-          <a class="social-icon" href="https://t.me/**********"><i class="fab fa-telegram"></i></a>
+          <button class="social-icon" onclick="showQRCode('whatsapp_qr')"><i class="fab fa-whatsapp"></i></button>
+          <button class="social-icon" onclick="showQRCode('telegram_qr')"><i class="fab fa-telegram"></i></button>
+          <img id="qrImage" src="{{url_for("static", filename="assets/img/qr.png")}}" alt="QR Code" style="display:none; margin-top: 10px;">
         </div>
       </div>
     </section>
