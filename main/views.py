@@ -19,7 +19,11 @@ def main_view():
         email = form.email.data
         message = form.message.data
 
-        msg = Message("Сообщение с вашего сайта", sender=EMAIL, recipients=[EMAIL])
+        msg = Message(
+            "Сообщение с вашего сайта",
+            sender=EMAIL,
+            recipients=[EMAIL]
+        )
         msg.body = f"От: {name} <{email}>\n\n{message}"
         mail.send(msg)
         flash("Спасибо за ваше сообщение!", "success")

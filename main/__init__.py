@@ -10,9 +10,9 @@ from settings import Config
 app = Flask(__name__)
 app.config.from_object(Config)
 
-app.config["RECAPTCHA_PUBLIC_KEY"] = os.environ.get("RECAPCHA_PUBLICK_KEY")
+app.config["RECAPTCHA_PUBLIC_KEY"] = os.environ.get("RECAPCHA_PUBLIC_KEY")
 app.config["RECAPTCHA_PRIVATE_KEY"] = os.environ.get(
-    "6Ld-R9MpAAAAAFAcBzGxoReXahIc-vnLnyvLQCho"
+    "RECAPCHA_SECRET_KEY"
 )
 app.config["RECAPTCHA_USE_SSL"] = True
 app.config["RECAPTCHA_OPTIONS"] = {"theme": "white"}
@@ -22,7 +22,9 @@ app.config["MAIL_SERVER"] = os.environ.get("MAIL_SERVER", "smtp.masterhost.ru")
 app.config["MAIL_PORT"] = os.environ.get("MAIL_PORT", 587)
 app.config["MAIL_USE_TLS"] = True
 app.config["MAIL_USERNAME"] = os.environ.get("EMAIL", "your-email@example.com")
-app.config["MAIL_PASSWORD"] = os.environ.get("EMAIL_PASS", "your-email-password")
+app.config["MAIL_PASSWORD"] = os.environ.get(
+    "EMAIL_PASS", "your-email-password"
+)
 
 mail = Mail(app)
 db = SQLAlchemy(app)
