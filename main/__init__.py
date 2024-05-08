@@ -32,4 +32,4 @@ mail = Mail(app)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
-from main import views, forms  # noqa
+from main import forms, views  # noqa

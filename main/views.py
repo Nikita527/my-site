@@ -8,7 +8,6 @@ from main import app, mail
 from main.forms import ContactForm
 from main.utils import generate_qr
 
-
 load_dotenv()
 EMAIL = os.environ.get("EMAIL")
 
@@ -21,13 +20,14 @@ def main_view():
         name = form.name.data
         email = form.email.data
         message = form.message.data
+        phone = form.phone.data
 
         msg = Message(
             "Сообщение с вашего сайта",
             sender=EMAIL,
             recipients=[EMAIL]
         )
-        msg.body = f"От: {name} <{email}>\n\n{message}"
+        msg.body = f"От: {name} <{email}> <{phone}>\n\n{message}"
         try:
             mail.send(msg)
         except Exception as e:

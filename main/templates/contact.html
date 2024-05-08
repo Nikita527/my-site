@@ -13,6 +13,10 @@
           {{ form.email(class="form-control", placeholder="Введите ваш email") }}
         </div>
         <div class="mb-3">
+          {{ form.phone.label(class="form-label") }}
+          {{ form.phone(class="form-control", placeholder="Введите ваш телефон") }}
+        </div>
+        <div class="mb-3">
           {{ form.message.label(class="form-label") }}
           {{ form.message(class="form-control", placeholder="Введите ваше сообщение", rows=3) }}
         </div>
