@@ -3,11 +3,11 @@ from wtforms import EmailField, StringField, SubmitField, TextAreaField
 from wtforms.validators import DataRequired, Email
 
 
-class ContactFrom(FlaskForm):
+class ContactForm(FlaskForm):
     """Форма обратной связи."""
 
     name = StringField("Имя", validators=[DataRequired()])
     email = EmailField("Почта", validators=[DataRequired(), Email()])
     message = TextAreaField("Сообщение", validators=[DataRequired()])
-    recapcha = RecaptchaField()
+    recaptcha = RecaptchaField()
     submit = SubmitField("Отправить")

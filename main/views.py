@@ -1,19 +1,22 @@
 import os
 
+from dotenv import load_dotenv
 from flask import flash, redirect, render_template, send_file, url_for
 from flask_mail import Message
 
 from main import app, mail
-from main.forms import ContactFrom
+from main.forms import ContactForm
 from main.utils import generate_qr
 
+
+load_dotenv()
 EMAIL = os.environ.get("EMAIL")
 
 
 @app.route("/", methods=["GET", "POST"])
 def main_view():
     """Главная страница."""
-    form = ContactFrom()
+    form = ContactForm()
     if form.validate_on_submit():
         name = form.name.data
         email = form.email.data
@@ -25,9 +28,14 @@ def main_view():
             recipients=[EMAIL]
         )
         msg.body = f"От: {name} <{email}>\n\n{message}"
-        mail.send(msg)
+        try:
+            mail.send(msg)
+        except Exception as e:
+            app.logger.error(f'Failed to send email: {e}')
+            flash("Ошибка при отправке сообщения", "error")
+
         flash("Спасибо за ваше сообщение!", "success")
-        return redirect(url_for("/"))
+        return redirect(url_for("main_view"))
     return render_template("main.html", form=form)
 
 
